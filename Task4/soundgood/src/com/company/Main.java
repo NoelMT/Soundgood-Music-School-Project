@@ -13,17 +13,21 @@ public class Main {
     private static PreparedStatement getStudIdSTM; //hömtar student id för terminate och lägger till history
     private static PreparedStatement addHistorySTM;    //private PreparedStatement ;
 
-    public Connection accesDB() throws SQLException, ClassNotFoundException {
+    public Connection accesDB(String s, String s1) throws SQLException, ClassNotFoundException {
             Class.forName("org.postgresql.Driver");
-           return DriverManager.getConnection("jdbc:postgresql://localhost:5432/renting",
-                    "postgres", "Golf1775");
+           return DriverManager.getConnection("jdbc:postgresql://localhost:5432/"+s1,
+                    "postgres", s);
     }
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
 
         System.out.println("Soundgood Music School");
         System.out.println("help to list commands");
         boolean ker = true;
-        Connection c = new Main().accesDB();
+        Scanner db = new Scanner(System.in);
+        System.out.println("\nENTER IN PASSWORD AND NAME OF DATABASE");
+        System.out.println("[\"PASWORD\" \"DB\"]");
+        String[] s =  db.nextLine().split(" ");
+        Connection c = new Main().accesDB(s[0],s[1]);
         c.setAutoCommit(false);
         Statement stmt = c.createStatement();
         prepareStatements(c);
@@ -43,6 +47,7 @@ public class Main {
                     break;
                 case "quit":
                     ker = false;
+                    c.close();
                     break;
                 case "list":
                     Scanner inst = new Scanner(System.in);

@@ -12,7 +12,7 @@ THEN 'Seats left'
 END
 from ensemble 
 inner join booked_students on ensemble.id = booked_students.ensemble_id
-where DATE_PART('week', datum) = (CAST(to_char(current_date, 'W') as INTEGER)+1)
+where DATE_PART('week', datum) = (CAST(to_char(current_date, 'WW') as INTEGER)+1)
 order by genre, datum;
 
 
