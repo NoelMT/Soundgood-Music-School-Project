@@ -1,3 +1,4 @@
+REFRESH MATERIALIZED VIEW booked_students;
 select id as ensemble_id , datum ,genre,instructor_id,id,max_seats,
 CASE 
 WHEN  (max_seats - boked) = 0 

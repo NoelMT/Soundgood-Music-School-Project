@@ -291,7 +291,7 @@ CREATE TABLE name_of_siblings (
 
 ALTER TABLE name_of_siblings ADD CONSTRAINT PK_name_of_siblings PRIMARY KEY (student_id);
 
-CREATE VIEW booked_students AS
+CREATE MATERIALIZED VIEW booked_students AS
 SELECT ensemble_id, count(*) as boked
 FROM ensemble_students
 group by ensemble_id

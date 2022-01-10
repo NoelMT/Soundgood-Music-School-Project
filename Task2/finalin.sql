@@ -25,7 +25,7 @@ insert into lesson (id, instructor_id, student_id, instrument, datum) values ('6
 insert into lesson (id, instructor_id, student_id, instrument, datum) values ('7', '9367', '7491', 'piano', '2021-12-05');
 
 insert into ensemble (id, level, genre, instructor_id, datum, max_seats) values ('3363', 'Advanced', 'gospel band', '9367', '2021-03-07', '1');
-insert into ensemble (id, level, genre, instructor_id, datum, max_seats) values ('0126', 'Beginner', 'punk rock', '9367', '2022-01-17', '2'); --change date to any date in the next week to be able to test case
+insert into ensemble (id, level, genre, instructor_id, datum, max_seats) values ('0126', 'Beginner', 'punk rock', '9367', '2022-01-20', '2'); --change date to any date in the next week to be able to test case
 insert into ensemble (id, level, genre, instructor_id, datum, max_seats) values ('6590', 'Intermediate', 'punk rock', '9367', '2021-05-07', '5');
 
 insert into ensemble_students(student_id, ensemble_id) values ('7491','0126');
