@@ -11,12 +11,12 @@ public class Main {
     private static PreparedStatement addRentalSTM; //nr of rentals per student
     private static PreparedStatement revertSTM; //gör så att instrumentet blir unrented true -> false
     private static PreparedStatement getStudIdSTM; //hömtar student id för terminate och lägger till history
-    private static PreparedStatement addHistorySTM;    //private PreparedStatement ;
+    private static PreparedStatement addHistorySTM;    //private PreparedStatement;
 
     public Connection accesDB(String s, String s1) throws SQLException, ClassNotFoundException {
             Class.forName("org.postgresql.Driver");
            return DriverManager.getConnection("jdbc:postgresql://localhost:5432/"+s1,
-                    "postgres", s);
+                    "postgres", "Golf1775");
     }
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
 
