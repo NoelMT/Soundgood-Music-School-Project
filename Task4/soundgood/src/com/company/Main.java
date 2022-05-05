@@ -160,6 +160,7 @@ public class Main {
             addRentalSTM.executeUpdate();
             c.commit();
         } catch (SQLException e) {
+            c.rollback(); //added rollback
             e.printStackTrace();
         }
 
@@ -181,6 +182,7 @@ public class Main {
             revertSTM.executeUpdate();
             c.commit();
             } catch (SQLException e) {
+            c.rollback(); //added rollback
             e.printStackTrace();
         }
     }
@@ -194,6 +196,7 @@ public class Main {
             addHistorySTM.executeUpdate();
             c.commit();
         } catch (Exception e) {
+            c.rollback(); //added rollback
             e.printStackTrace();
         }
 
